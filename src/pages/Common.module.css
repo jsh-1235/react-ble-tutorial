@@ -1,0 +1,73 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0px 0px;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  justify-items: stretch;
+  background-color: white;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0px 4px;
+  align-content: stretch;
+  justify-content: end;
+  align-items: center;
+  justify-items: center;
+
+  background-color: #102027;
+  padding: 4px;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: auto auto auto, 1fr;
+  gap: 0px 0px;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.info {
+  align-self: center;
+  justify-self: center;
+  font-size: 2rem;
+  margin: 0px;
+}
+
+.canvas {
+  align-self: center;
+  justify-self: center;
+
+  width: 300px;
+  height: 100px;
+  background-color: #1b1b1b;
+}
+
+.note {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.note>ul {
+  padding-left: 20px;
+}
+
+.note>ul[title]::before {
+  content: attr(title);
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #102027;
+  margin: 10px;
+}
+
+.note>ul>li {
+  font-size: 1rem;
+  padding: 4px;
+}

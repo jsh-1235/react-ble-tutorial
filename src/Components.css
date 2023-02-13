@@ -1,0 +1,74 @@
+:root {
+  --component-font-size: 1rem;
+  --component-height: calc(var(--component-font-size) * 2.5);
+  --component-border-radius: 4px;
+}
+
+.text-link {
+  text-decoration: inherit;
+  color: white;
+}
+
+.text-link:hover {
+  color: #42a5f5;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+
+.text-link:active {
+  color: #0077c2;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+
+.list-link {
+  display: block;
+  text-decoration: inherit;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.list-link:hover {
+  background-color: #42a5f5;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.list-link:active {
+  background-color: #0077c2;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.button {
+  min-width: calc(var(--component-font-size) * 6);
+  height: var(--component-height);
+  border: none;
+  border-radius: var(--component-border-radius);
+  background-color: #85bb5c;
+  color: white;
+  font-size: var(--component-font-size);
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.button:hover {
+  background-color: #558b2f;
+  cursor: pointer;
+  transition-property: background-color, cursor;
+  transition-duration: 0.5s;
+}
+
+.button:active {
+  background-color: #255d00;
+  transition-property: background-color, cursor;
+  transition-duration: 0.5s;
+}
+
+.button:disabled {
+  background-color: #455a64;
+  color: #cfd8dc;
+}
