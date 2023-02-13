@@ -64,9 +64,11 @@ export default function Home({ ...props }) {
         setConnected(true);
 
         ble.startDataNotifications((event) => {
-          setBuffer([event.target.value.getUint8(0), event.target.value.getUint8(1), event.target.value.getUint8(2), event.target.value.getUint8(3), event.target.value.getUint8(4)]);
+          if (event.target.value.getUint8(4) === 55) {
+            setBuffer([event.target.value.getUint8(0), event.target.value.getUint8(1), event.target.value.getUint8(2), event.target.value.getUint8(3), event.target.value.getUint8(4)]);
 
-          setDepth((Number(event.target.value.getUint8(0)) * 100) / 100);
+            setDepth((Number(event.target.value.getUint8(0)) * 100) / 100);
+          }
         });
       })
       .catch((error) => {
