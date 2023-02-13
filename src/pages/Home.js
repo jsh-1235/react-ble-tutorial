@@ -12,6 +12,9 @@ const lineGraph = new LineGraph(0, 0, 300, 100, "white");
 lineGraph.setLineWidth(1);
 lineGraph.setXScale(1);
 
+const TX_END_BYTE = 55;
+const RX_END_BYTE = 255;
+
 export default function Home({ ...props }) {
   const canvasRef = useRef();
 
@@ -64,7 +67,7 @@ export default function Home({ ...props }) {
         setConnected(true);
 
         ble.startDataNotifications((event) => {
-          if (event.target.value.getUint8(4) === 55) {
+          if (event.target.value.getUint8(4) === TX_END_BYTE) {
             setBuffer([event.target.value.getUint8(0), event.target.value.getUint8(1), event.target.value.getUint8(2), event.target.value.getUint8(3), event.target.value.getUint8(4)]);
 
             setDepth((Number(event.target.value.getUint8(0)) * 100) / 100);
@@ -77,7 +80,7 @@ export default function Home({ ...props }) {
   };
 
   const write = (e) => {
-    const response = Uint8Array.of(0, 0, 0, depth, 255);
+    const response = Uint8Array.of(0, 0, 0, depth, RX_END_BYTE);
 
     console.log(response);
 
